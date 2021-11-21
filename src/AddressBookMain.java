@@ -34,7 +34,9 @@ class AddressBookMain {
         System.out.println("Press 7 to view contact count by State");
         System.out.println("Press 8 to view contact count by City");
         System.out.println("Press 9 to view list of contacts in sorted order");
-        System.out.println("Press 10 to Quit");
+        System.out.println("Press 10 to view list of contacts in city sorted order");
+        System.out.println("Press 11 to view list of contacts in state sorted order");
+        System.out.println("Press 12 to Quit");
     }
 
     /*
@@ -144,6 +146,18 @@ class AddressBookMain {
         person.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(System.out::println);
     }
     /*
+     * setCitySorted() method to print person list in sorted order
+     * */
+    public void setCitySorted(){
+        cityName.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(System.out::println);
+    }
+    /*
+     * setNameSorted() method to print person list in sorted order
+     * */
+    public void setStateSorted(){
+        stateName.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(System.out::println);
+    }
+    /*
      * Mian function of class
      * */
     public static void main(String[] args) {
@@ -209,6 +223,14 @@ class AddressBookMain {
             else if (choice ==9)
             {
                 obj.setNameSorted();
+            }
+            else if (choice ==10)
+            {
+                obj.setCitySorted();
+            }
+            else if (choice ==11)
+            {
+                obj.setStateSorted();
             }
 
             menu();
